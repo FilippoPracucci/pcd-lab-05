@@ -1,4 +1,4 @@
-package pcd.lab05.mvc.version3_good;
+package pcd.lab05.mvc.v3_good;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;

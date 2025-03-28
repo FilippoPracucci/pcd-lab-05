@@ -1,4 +1,4 @@
-package pcd.lab05.mvc.version2_deadlock;
+package pcd.lab05.mvc.v3_good;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ public class MyModel {
 		return state;
 	}
 	
-	public synchronized void addObserver(ModelObserver obs){
+	public void addObserver(ModelObserver obs){
 		observers.add(obs);
 	}
 	

@@ -1,4 +1,4 @@
-package pcd.lab05.mvc.version2_deadlock;
+package pcd.lab05.mvc.v2_deadlock;
 
 
 public class MyController {
