@@ -1,4 +1,4 @@
-package pcd.lab05.mvc.version2_deadlock;
+package pcd.lab05.mvc.v1_unresponsive;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -8,6 +8,7 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
@@ -48,11 +49,6 @@ class MyView extends JFrame implements ActionListener, ModelObserver {
 		});
 	}
 	
-	public void display() {
-		SwingUtilities.invokeLater(() -> {
-			setVisible(true);
-		});
-	}
 	public void actionPerformed(ActionEvent ev) {
 		try {
 			controller.processEvent(ev.getActionCommand());
@@ -62,18 +58,13 @@ class MyView extends JFrame implements ActionListener, ModelObserver {
 
 	@Override
 	public void modelUpdated(MyModel model) {
-		try {
-			System.out.println("[View] model updated => updating the view");
-			
-			/* wrong: possible races */
-			// state.setText("state: " + model.getState());
-			
-			/* no more races but deadlock */
-			SwingUtilities.invokeAndWait(() -> {
-				state.setText("state: " + model.getState());
-			});			
-		} catch (Exception ex){
-			ex.printStackTrace();
-		}
+		state.setText("state: "+model.getState());
 	}
+
+	public void display() {
+		SwingUtilities.invokeLater(() -> {
+			this.setVisible(true);
+		});
+	}
+
 }

@@ -1,4 +1,4 @@
-package pcd.lab05.mvc.version1_unresponsive;
+package pcd.lab05.mvc.v2_deadlock;
 
 public interface ModelObserver {
 

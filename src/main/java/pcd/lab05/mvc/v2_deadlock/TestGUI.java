@@ -1,4 +1,4 @@
-package pcd.lab05.mvc.version1_unresponsive;
+package pcd.lab05.mvc.v2_deadlock;
 
 public class TestGUI {
   static public void main(String[] args){
@@ -8,6 +8,7 @@ public class TestGUI {
     var view = new MyView(controller);
     model.addObserver(view);    
     view.display();
+    
   }
   
 }

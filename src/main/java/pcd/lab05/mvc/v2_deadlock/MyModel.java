@@ -1,4 +1,4 @@
-package pcd.lab05.mvc.version1_unresponsive;
+package pcd.lab05.mvc.v2_deadlock;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,16 +13,16 @@ public class MyModel {
 		observers = new ArrayList<ModelObserver>();
 	}
 	
-	public void update(){
+	public synchronized void update(){
 		state++;
 		notifyObservers();
 	}
 	
-	public int getState(){
+	public synchronized int getState(){
 		return state;
 	}
 	
-	public void addObserver(ModelObserver obs){
+	public synchronized void addObserver(ModelObserver obs){
 		observers.add(obs);
 	}
 	

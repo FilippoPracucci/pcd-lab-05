@@ -1,4 +1,4 @@
-package pcd.lab05.mvc.version3_good;
+package pcd.lab05.mvc.v3_good;
 
 public class TestGUI {
   static public void main(String[] args){
